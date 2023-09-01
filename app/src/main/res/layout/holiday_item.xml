@@ -22,7 +22,7 @@
             android:id="@+id/tvDate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/design_default_color_primary_variant"
+            android:background="@color/material_dynamic_neutral40"
             android:fontFamily="@font/montserrat_medium"
             android:paddingStart="16dp"
             android:paddingTop="8dp"

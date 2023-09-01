@@ -6,12 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".ViewHoliday">
 
+    <ImageView
+        android:id="@+id/imgBackBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.002"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
+
     <TextView
         android:id="@+id/tvViewDay"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginTop="180dp"
-        android:fontFamily="@font/montserrat_medium"
+        android:fontFamily="@font/montserrat_bold"
         android:text="2020-01-01"
         android:textColor="@color/black"
         android:textSize="34sp"
@@ -29,7 +42,7 @@
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="34sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/montserrat_medium"
+        android:fontFamily="@font/montserrat_bold"
         android:text="Public"
         android:textColor="@color/black"
         android:textSize="20sp"
