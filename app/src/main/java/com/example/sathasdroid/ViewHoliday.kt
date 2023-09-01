@@ -8,6 +8,9 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import com.example.sathasdroid.Entity.Holiday
 
+/*
+* The Activity Class Is Used For ViewHoliday
+* */
 class ViewHoliday : AppCompatActivity() {
     // Declare UI elements
     private lateinit var holiday:Holiday

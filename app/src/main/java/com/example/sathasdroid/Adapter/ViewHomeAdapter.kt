@@ -9,6 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sathasdroid.Entity.Holiday
 import com.example.sathasdroid.R
 
+/*
+* The Adapter Class Is Used For Parameterizing @MainActivity
+* */
 class ViewHomeAdapter(
     private val holidayCardClicked:(Holiday)->Unit
 ): RecyclerView.Adapter<ViewHomeViewHolder>() {

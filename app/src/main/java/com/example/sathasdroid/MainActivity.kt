@@ -6,12 +6,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Adapter
 import android.widget.Toast
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sathasdroid.APIService.HolidayService
 import com.example.sathasdroid.Adapter.ViewHomeAdapter
 import com.example.sathasdroid.Entity.Holiday
 import com.example.sathasdroid.RetrofitService.RetrofitService
+import com.facebook.shimmer.ShimmerFrameLayout
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,9 +21,15 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
     private lateinit var rvHoliday:RecyclerView
     private lateinit var adapter: ViewHomeAdapter
+    private lateinit var shimmerIndexFrag: ShimmerFrameLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Thread.sleep(3000)
+        installSplashScreen()
         setContentView(R.layout.activity_main)
+
+        shimmerIndexFrag = findViewById(R.id.shimmerIndexFrag)
+        shimmerIndexFrag.startShimmer()
 
         initRecyclerView()
     }
@@ -35,6 +43,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun callAPI(){
+
         val retrofitService=RetrofitService()
         val getList =retrofitService.getRetrofit().create(HolidayService::class.java)
 
@@ -44,6 +53,9 @@ class MainActivity : AppCompatActivity() {
                 if(response.isSuccessful){
                     if (response.body()!=null){
                         adapter.setList(response.body()!!)
+                        shimmerIndexFrag.stopShimmer()
+                        shimmerIndexFrag.visibility = View.GONE
+                        rvHoliday.visibility = View.VISIBLE
                     }
                 }else{
                     Toast.makeText(this@MainActivity,"Invalid response", Toast.LENGTH_SHORT).show()

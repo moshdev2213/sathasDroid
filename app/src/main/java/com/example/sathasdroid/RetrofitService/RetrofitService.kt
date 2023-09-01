@@ -4,6 +4,9 @@ import com.google.gson.Gson
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+/*
+* The Class Is Used For Building Retrofit API Client
+* */
 class RetrofitService {
     private var retrofit: Retrofit
 
